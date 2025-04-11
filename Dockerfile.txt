@@ -1,0 +1,19 @@
+
+
+# Python bazaviy image
+FROM python:3.10-slim
+
+# Ishchi papkani o'rnatish
+WORKDIR /app
+
+# Fayllarni konteynerga ko'chirish
+COPY . /app
+
+# Python kutubxonalarni o‘rnatish
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Botni ishga tushirish
+CMD ["python", "bot.py"]
+
+
+docker run --env BOT_TOKEN=123456789:ABCDef... myimage
